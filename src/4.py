@@ -1,5 +1,6 @@
 # In your batch file, how many passports are valid?
 # https://adventofcode.com/2020/day/4
+
 import re
 from src.aoc_core import *
 
@@ -81,7 +82,7 @@ for line in data:
             # (PART 2) Check that all fields are valid
             invalid = 0
             for field in document_info:
-                if eval("not verify_" + field[0] + "(field[1])"):
+                if not eval("verify_" + field[0] + "(field[1])"):
                     invalid = 1
                     break
 
