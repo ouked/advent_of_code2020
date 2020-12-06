@@ -22,14 +22,12 @@ for line in c.get_str_input():
     letter = split_line[1][0]
 
     password = split_line[2]
-    count = 0
 
-    for char in password:
-        if char == letter:
-            count += 1
+    count = sum(1 for char in password if char == letter)
 
-    if count in range(min_occ, max_occ+1):
+    if count in range(min_occ, max_occ + 1):
         accepted_passwords += 1
+
 print("Number of valid passwords for Part 1:", accepted_passwords)
 
 # endregion
@@ -45,9 +43,9 @@ for line in c.get_str_input():
     # Toboggan Corporate Policies have no concept of "index zero"
 
     # Position of given character
-    pos1 = int(occ[0])-1
+    pos1 = int(occ[0]) - 1
     # Second position of given character
-    pos2 = int(occ[1])-1
+    pos2 = int(occ[1]) - 1
 
     # Letter in question
     letter = split_line[1][0]
@@ -64,3 +62,6 @@ print("Number of valid passwords for Part 2:", accepted_passwords)
 
 
 c.print_toc()
+
+# Number of valid passwords for Part 1: 439
+# Number of valid passwords for Part 2: 584
