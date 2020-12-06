@@ -32,7 +32,7 @@ def get_seat_id(boarding_pass):
     row = binary_partition(boarding_pass[:-3],  "F", "B", rows - 1)
     seat = binary_partition(boarding_pass[-3:], "L", "R", seats - 1)
 
-    return (row * 8) + seat
+    return (row * seats) + seat
 
 
 seat_ids = []
