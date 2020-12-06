@@ -6,6 +6,7 @@ from src.aoc_core import *
 c = Core(6)
 c.tic()
 
+# Append "" so last block is processed
 data = c.get_str_input()
 data.append("")
 
@@ -23,11 +24,13 @@ is_new_group = 1
 
 for line in data:
 
+    # Reset arrays
     if is_new_group:
-        mutual_positive_answers = list(dict.fromkeys([char for char in line]))
+        mutual_positive_answers = [char for char in line]
         positive_answers = []
         is_new_group = 0
 
+    # End of block
     if line == "":
         part1 += len(positive_answers)
         part2 += len(mutual_positive_answers)

@@ -3,10 +3,10 @@ import time
 
 class Core:
     puzzle_input_dir = "../puzzle_input/"
-    start_time = 0
 
     def __init__(self, day):
         self.day = day
+        self.start_time = 0
 
     def get_input_filename(self, extension=".txt"):
         return self.puzzle_input_dir + str(self.day) + extension
@@ -26,8 +26,8 @@ class Core:
         return end_time - self.start_time
 
     def print_toc(self):
-        duration = str(self.toc())
-        print("Elapsed time: " + duration)
+        duration = self.toc()
+        print("Elapsed time:", duration)
 
     def get_int_input(self):
         with open(self.get_input_filename(), 'r') as f:

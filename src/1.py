@@ -16,6 +16,7 @@ def find_two_entries():
         for j in entries:
             if i + j == 2020:
                 return [i, j]
+
     return [0, 0]
 
 

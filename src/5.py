@@ -13,6 +13,7 @@ rows = 128
 seats = 8
 
 
+# Returns number specified by boarding pass.
 def binary_partition(boarding_pass, lo_char, hi_char, upper, lower=0):
     lo = lower
     hi = upper
@@ -23,25 +24,25 @@ def binary_partition(boarding_pass, lo_char, hi_char, upper, lower=0):
         elif char == lo_char:
             hi = int((lo + hi) / 2)
         else:
-            raise Exception("Invalid format for boarding pass:", boarding_pass)
+            raise Exception("Invalid format for boarding pass:", boarding_pass, "/nAccepted characters: {", lo_char,
+                            hi_char, "}")
 
     return hi
 
 
+# Calculates seat_id from row and column of seat
 def get_seat_id(boarding_pass):
-    row = binary_partition(boarding_pass[:-3],  "F", "B", rows - 1)
+    row = binary_partition(boarding_pass[:-3], "F", "B", rows - 1)
     seat = binary_partition(boarding_pass[-3:], "L", "R", seats - 1)
 
     return (row * seats) + seat
 
+# List of all seat_ids
+seat_ids = [get_seat_id(line.rstrip()) for line in data]
 
-seat_ids = []
-max_seat_id = 0
-for line in data:
-    seat_id = get_seat_id(line.rstrip())
-    if seat_id > max_seat_id:
-        max_seat_id = seat_id
-    seat_ids.append(seat_id)
+# Find maximum seat_id
+# This can be done by sharing the for loop used to collect all seat_ids, but this reads better
+max_seat_id = max(seat_ids)
 
 print("1) Maximum seat ID:", max_seat_id)
 
@@ -53,6 +54,5 @@ for i in range(1, len(seat_ids) - 2):
     if seat_ids[i + 1] != seat_ids[i] + 1:
         print("2) Your seat is:", seat_ids[i] + 1)
         break
-
 
 c.print_toc()
