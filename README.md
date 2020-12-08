@@ -7,6 +7,6 @@ My attempt for the [Advent of Code 2020](https://adventofcode.com) in Python üê
 ## Outcomes
 
 - Rapid and iterative ideation, production and evaluation of prototypes
-- Practical problem solving 
-- Opportunity to find more efficient ways of solving problems with multiple possible solutions
-- Reason to practice programming daily
+- Opportunity to find efficient solutions for solving problems
+- Learn about new algorithms 
+- Practice programming daily
