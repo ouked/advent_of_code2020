@@ -1,2 +1,3 @@
 # Project exclude paths
 /venv/py/
+/puzzle_input/
