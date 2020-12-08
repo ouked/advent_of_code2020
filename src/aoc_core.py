@@ -27,7 +27,7 @@ class Core:
 
     def print_toc(self):
         duration = self.toc()
-        print("Elapsed time:", duration)
+        print("\nElapsed time:", duration)
 
     def get_int_input(self):
         with open(self.get_input_filename(), 'r') as f:

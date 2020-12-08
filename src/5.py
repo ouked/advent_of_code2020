@@ -37,6 +37,7 @@ def get_seat_id(boarding_pass):
 
     return (row * seats) + seat
 
+
 # List of all seat_ids
 seat_ids = [get_seat_id(line.rstrip()) for line in data]
 
